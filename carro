@@ -1,0 +1,41 @@
+Josefa Rodrigues Nunes
+Josiana Rodrigues da Silva
+Joseane Marli Moreira Coelho
+Tiago da Silva Brito
+Vitor Gabriel de Sousa Oliveira Sales
+
+public class TesteCarro {
+    public static void main(String[] args) {
+        Carro c = new Carro();
+        c.setPlaca("ABC-2025");
+        c.setMarca("Fiat");
+        c.setModelo("Argo");
+        c.setAno(2022);
+        c.setValor(80000);
+        c.setNumeroPortas(4);
+    }
+}
+
+// Classe Carro herdando de Veiculo
+public class Carro extends Veiculo {
+
+    // Novo atributo específico da classe Carro
+    private int numeroPortas;
+
+    // Getter - retorna o número de portas
+    public int getNumeroPortas() {
+        return numeroPortas;
+    }
+
+    // Setter - define o número de portas
+    public void setNumeroPortas(int numeroPortas) {
+        this.numeroPortas = numeroPortas;
+    }
+
+    // Sobrescrita (override) do método calcularIpva()
+    // Aqui o IPVA é de 3,5% do valor do veículo
+    @Override
+    public double calcularIpva() {
+        return getValor() * 0.035;
+    }
+}
