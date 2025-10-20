@@ -5,7 +5,7 @@ Joseane Marli Moreira Coelho
 Tiago da Silva Brito
 Vitor Gabriel de Sousa Oliveira Sales
  
-public class TesteCaminhao {
+public classCaminhao {
     public static void main(String[] args) {
         Caminhao c1 = new Caminhao();
         c1.setPlaca("KLM-2025");
