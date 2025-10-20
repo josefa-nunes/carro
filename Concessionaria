@@ -1,0 +1,87 @@
+2º webquest programação
+Josefa Rodrigues Nunes
+Josiana Rodrigues da Silva
+Joseane Marli Moreira Coelho
+Tiago da Silva Brito
+Vitor Gabriel de Sousa Oliveira Sales
+ 
+import java.util.ArrayList;
+
+public class Concessionaria {
+    public static void main(String[] args) {
+
+        // Criação de uma lista para armazenar objetos do tipo Veiculo
+        ArrayList<Veiculo> veiculos = new ArrayList<>();
+
+        // Adicionando 3 carros
+        Carro carro1 = new Carro();
+        carro1.setPlaca("ABC-1234");
+        carro1.setMarca("Toyota");
+        carro1.setModelo("Corolla");
+        carro1.setAno(2021);
+        carro1.setValor(120000);
+        carro1.setNumeroPortas(4);
+        veiculos.add(carro1);
+
+        Carro carro2 = new Carro();
+        carro2.setPlaca("DEF-5678");
+        carro2.setMarca("Fiat");
+        carro2.setModelo("Pulse");
+        carro2.setAno(2023);
+        carro2.setValor(95000);
+        carro2.setNumeroPortas(4);
+        veiculos.add(carro2);
+
+        Carro carro3 = new Carro();
+        carro3.setPlaca("GHI-9101");
+        carro3.setMarca("Chevrolet");
+        carro3.setModelo("Onix");
+        carro3.setAno(2020);
+        carro3.setValor(80000);
+        carro3.setNumeroPortas(4);
+        veiculos.add(carro3);
+
+        // Adicionando 2 motos
+        Moto moto1 = new Moto();
+        moto1.setPlaca("JKL-2025");
+        moto1.setMarca("Honda");
+        moto1.setModelo("CG 160 Titan");
+        moto1.setAno(2022);
+        moto1.setValor(15000);
+        moto1.setCilindradas(160);
+        veiculos.add(moto1);
+
+        Moto moto2 = new Moto();
+        moto2.setPlaca("MNO-3030");
+        moto2.setMarca("Yamaha");
+        moto2.setModelo("Fazer 250");
+        moto2.setAno(2023);
+        moto2.setValor(21000);
+        moto2.setCilindradas(250);
+        veiculos.add(moto2);
+
+        // Exibindo informações de todos os veículos
+        System.out.println("=== VEÍCULOS CADASTRADOS NA CONCESSIONÁRIA ===\n");
+
+        for (Veiculo v : veiculos) {
+            System.out.println("Placa: " + v.getPlaca());
+            System.out.println("Marca: " + v.getMarca());
+            System.out.println("Modelo: " + v.getModelo());
+            System.out.println("Ano: " + v.getAno());
+            System.out.println("Valor: R$" + v.getValor());
+
+            // Verificando o tipo de veículo (Carro ou Moto)
+            if (v instanceof Carro) {
+                Carro c = (Carro) v;
+                System.out.println("Número de portas: " + c.getNumeroPortas());
+            } else if (v instanceof Moto) {
+                Moto m = (Moto) v;
+                System.out.println("Cilindradas: " + m.getCilindradas());
+            }
+
+            // Exibindo o IPVA calculado
+            System.out.println("IPVA: R$" + v.calcularIpva());
+            System.out.println("------------------------------------");
+        }
+    }
+}

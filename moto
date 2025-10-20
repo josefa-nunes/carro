@@ -1,0 +1,35 @@
+public class Moto {
+    public static void main(String[] args) {
+        Moto m = new Moto();
+        m.setPlaca("XYZ-9876");
+        m.setMarca("Yamaha");
+        m.setModelo("MT-03");
+        m.setAno(2023);
+        m.setValor(40000);
+        m.setCilindradas(321);
+   }
+}
+
+// Classe Moto herdando de Veiculo
+public class Moto extends Veiculo {
+
+    // Novo atributo específico da moto
+    private int cilindradas;
+
+    // Getter - retorna o valor das cilindradas
+    public int getCilindradas() {
+        return cilindradas;
+    }
+
+    // Setter - define o valor das cilindradas
+    public void setCilindradas(int cilindradas) {
+        this.cilindradas = cilindradas;
+    }
+
+    // Sobrescrita (override) do método calcularIpva()
+    // Para moto, o IPVA é de 2,5% do valor
+    @Override
+    public double calcularIpva() {
+        return getValor() * 0.025;
+    }
+}
